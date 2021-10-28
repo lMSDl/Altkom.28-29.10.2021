@@ -11,6 +11,61 @@ namespace ConsoleApp
         // STATIC - oznacza, że jest to metoda niezależna (niezmienna) od instancji klasy
         static void Main(string[] args)
         {
+            //wytworzenie obiektu klasy program
+            var program = new Program();
+            program.Numbers();
+        }
+
+        void Numbers()
+        {
+            int a = 30;
+            int b = 2;
+            int c = 18;
+
+            int d = a + b - 3 * c;
+            Console.WriteLine(d);
+            
+            d = a / c;
+            Console.WriteLine($"{a} / {c} = {d} reszty {a % c}");
+
+            d = a + b / (c - a) * d;
+            Console.WriteLine(d);
+
+            Console.WriteLine($"int może przechowywać wartości od {int.MinValue} do {int.MaxValue}");
+
+            d = int.MaxValue;
+            d = d + 2;
+            // int.MaxValue + 2 == int.MinValue + 1
+            Console.WriteLine(d);
+
+            Console.WriteLine($"short może przechowywać wartości od {short.MinValue} do {short.MaxValue}");
+            Console.WriteLine($"long może przechowywać wartości od {long.MinValue} do {long.MaxValue}");
+            Console.WriteLine($"uint może przechowywać wartości od {uint.MinValue} do {uint.MaxValue}");
+
+            var intValue = 5;
+            var longValue = 5L;
+            var floatValue = 5f;
+            var doubleValue = 5d;
+            var decimalValue = 5M;
+
+            float f = (float)a / c;
+            Console.WriteLine(f);
+            double g = (double)a / c;
+            Console.WriteLine(g);
+            decimal h = (decimal)a / c;
+            Console.WriteLine(h);
+
+            Console.WriteLine($"float może przechowywać wartości od {float.MinValue} do {float.MaxValue}");
+            Console.WriteLine($"double może przechowywać wartości od {double.MinValue} do {double.MaxValue}");
+            Console.WriteLine($"decimal może przechowywać wartości od {decimal.MinValue} do {decimal.MaxValue}");
+
+            var result = Math.PI * Math.Pow(a, 2) / 2;
+            Console.WriteLine($"Połowa powierzchni koła o promieniu {a} = {result}");
+
+        }
+
+        void Strings()
+        {
             //Deklaracja i inicjalizacja zmiennej lokalnej
             var helloString = "Hello";
 
@@ -20,10 +75,10 @@ namespace ConsoleApp
             classString = "World";
 
             //helloString = helloString + classString;
-            
+
             //przypisanie wartości do zmiennej
             classString = "Class";
-            
+
 
             //Wywołanie metody statycznej z klasy Console
             Console.WriteLine(helloString + " " + classString + "!");
