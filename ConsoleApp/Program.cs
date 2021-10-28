@@ -13,10 +13,78 @@ namespace ConsoleApp
         {
             //wytworzenie obiektu klasy program
             var program = new Program();
-            program.CalculateCircleArea();
+
+            var input = Console.ReadLine();
+
+            //parametry w funkcjach, które używamy, możemy poprzedzić nazwą parametru danej funkcji
+            //bool value = string.Compare(input, "TriangleArea", ignoreCase: true) == 0;
+            //Console.WriteLine(value);
+
+            if(string.Compare(input, nameof(TriangleArea), ignoreCase: true) == 0)
+            {
+                program.TriangleArea();
+            }
+            else if(string.Compare(input, nameof(EquilaterTriangleArea), ignoreCase: true) == 0)
+            {
+                program.EquilaterTriangleArea();
+            }
+            else if (string.Compare(input, nameof(CalcCircleArea), ignoreCase: true) == 0)
+            {
+                program.CalcCircleArea();
+            }
+            else
+            {
+                Console.WriteLine("Nieznana funkcja");
+            }
+
         }
 
-        void CalculateCircleArea()
+        void TriangleArea()
+        {
+            Console.WriteLine($"Podaj dlugosc podstawy trojkata");
+            var podstawa = Console.ReadLine();
+            Console.WriteLine($"Podaj dlugosc wysokosci trojkata");
+            var wysokosc = Console.ReadLine();
+
+            var a = double.Parse(podstawa);
+            var h = double.Parse(wysokosc);
+
+            var area = a * h / 2;
+
+            Console.WriteLine($"Pole trojkata wynosi: {area}");
+        }
+
+        void EquilaterTriangleArea()
+        {
+            Console.WriteLine($"Podaj dlugosc boku trojkata");
+            var bok = Console.ReadLine();
+
+            var a_r = double.Parse(bok);
+
+            var area_r = Math.Pow(a_r, 2) * Math.Sqrt(3) / 4;
+            Console.WriteLine($"Pole trojkata wynosi: {area_r}");
+        }
+
+        void TriangleSinArea()
+        {
+            Console.WriteLine($"Podaj dlugosc pierwszego boku trojkata");
+            var bok1 = Console.ReadLine();
+            Console.WriteLine($"Podaj dlugosc drugiego boku trojkata");
+            var bok2 = Console.ReadLine();
+            Console.WriteLine($"Podaj miare kata miedzy bokami trojkata");
+            var kat = Console.ReadLine();
+
+            var b1 = double.Parse(bok1);
+            var b2 = double.Parse(bok2);
+            var alpha = double.Parse(kat);
+            alpha = alpha * Math.PI / 180;
+
+            var area = b1 * b2 * Math.Sin(alpha) / 2;
+
+            Console.WriteLine($"Pole trojkata wynosi: {area}");
+        }
+
+        void CalcCircleArea()
         {
             Console.WriteLine("Podaj promień koła:");
             var inputR = Console.ReadLine();
