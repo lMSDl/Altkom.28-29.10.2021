@@ -115,11 +115,29 @@ namespace ConsoleApp
             Console.WriteLine("Podaj promień koła:");
             var inputR = Console.ReadLine();
 
-            var r = float.Parse(inputR);
+            //try
+            //{
+            //var r = float.Parse(inputR);
+            
+            //Metoda TryParse wykorzystuje parametr wyjściowy (out) w celu zwrócenia dodatkowego rezultatu z funkcji
+            //float r;
+            //bool isParsed = float.TryParse(inputR, out r);
+            
+            //C# pozwala na deklarację zmiennej po słowie kluczowym out
+            bool isParsed = float.TryParse(inputR, out float r);
+            if (isParsed)
+                {
+                    var result = Math.PI * Math.Pow(r, 2);
 
-            var result = Math.PI * Math.Pow(r, 2);
-
-            Console.WriteLine($"Pole wynosi: {result}");
+                    Console.WriteLine($"Pole wynosi: {result}");
+                }
+                else
+                    Console.WriteLine($"Niepoprawna wartość!");
+            //}
+            //catch
+            //{
+            //    Console.WriteLine($"Niepoprawna wartość!");
+            //}
         }
 
 
