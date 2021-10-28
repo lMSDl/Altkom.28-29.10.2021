@@ -14,29 +14,55 @@ namespace ConsoleApp
             //wytworzenie obiektu klasy program
             var program = new Program();
 
-            var input = Console.ReadLine();
 
             //parametry w funkcjach, które używamy, możemy poprzedzić nazwą parametru danej funkcji
             //bool value = string.Compare(input, "TriangleArea", ignoreCase: true) == 0;
             //Console.WriteLine(value);
+            string input;
 
-            if(string.Compare(input, nameof(TriangleArea), ignoreCase: true) == 0)
+            //WHILE - pętla sprawdzająca warunek przed wykonaniem ciała oraz po każdym wykonaniu
+            //DO WHILE - pętla zapewniająca przynajmniej jedno wykonanie ciała - warunek sprawdzany na końcu
+
+            //while (string.Compare( (input = Console.ReadLine()) , "exit", true) != 0)
+            //while(true)
+            //do
+            //{
+
+            /*
+             for([1],[2,5,8,11],[4,7,10])
+             {
+                [3,6,9]
+             }
+             */
+
+            for (int i = 0; i < 3; i = i + 1)
+            //for(;;)
             {
-                program.TriangleArea();
-            }
-            else if(string.Compare(input, nameof(EquilaterTriangleArea), ignoreCase: true) == 0)
-            {
-                program.EquilaterTriangleArea();
-            }
-            else if (string.Compare(input, nameof(CalcCircleArea), ignoreCase: true) == 0)
-            {
-                program.CalcCircleArea();
-            }
-            else
-            {
-                Console.WriteLine("Nieznana funkcja");
+                input = Console.ReadLine();
+                if (string.Compare(input, nameof(TriangleArea), ignoreCase: true) == 0)
+                {
+                    program.TriangleArea();
+                }
+                else if (string.Compare(input, nameof(EquilaterTriangleArea), ignoreCase: true) == 0)
+                {
+                    program.EquilaterTriangleArea();
+                }
+                else if (string.Compare(input, nameof(CalcCircleArea), ignoreCase: true) == 0)
+                {
+                    program.CalcCircleArea();
+                }
+                else if (string.Compare(input, "exit", true) == 0)
+                {
+                    //przerwanie wykonywania pętli
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Nieznana funkcja");
+                }
             }
 
+            //} while (!string.Equals(input, "exit", StringComparison.InvariantCultureIgnoreCase));
         }
 
         void TriangleArea()
