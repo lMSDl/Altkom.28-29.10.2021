@@ -13,8 +13,21 @@ namespace ConsoleApp
         {
             //wytworzenie obiektu klasy program
             var program = new Program();
-            program.Numbers();
+            program.CalculateCircleArea();
         }
+
+        void CalculateCircleArea()
+        {
+            Console.WriteLine("Podaj promień koła:");
+            var inputR = Console.ReadLine();
+
+            var r = float.Parse(inputR);
+
+            var result = Math.PI * Math.Pow(r, 2);
+
+            Console.WriteLine($"Pole wynosi: {result}");
+        }
+
 
         void Numbers()
         {
@@ -48,6 +61,7 @@ namespace ConsoleApp
             var doubleValue = 5d;
             var decimalValue = 5M;
 
+            //rzutowanie - zmiana typu na ten określony w nawiasach
             float f = (float)a / c;
             Console.WriteLine(f);
             double g = (double)a / c;
@@ -61,6 +75,18 @@ namespace ConsoleApp
 
             var result = Math.PI * Math.Pow(a, 2) / 2;
             Console.WriteLine($"Połowa powierzchni koła o promieniu {a} = {result}");
+
+            int largeValue = 1000000000;
+            //zmiana typu na taki o wyższej precyzji/zakresie może odbywać się bez jawnego rzutowania
+            long otherLargeValue = largeValue;
+
+            Console.WriteLine(otherLargeValue);
+
+            otherLargeValue = 10000000;
+            //jawne rzutowanie wymagane w przypadku zmiany na typ o niższej precyzji/zakresie
+            largeValue = (int)otherLargeValue;
+
+            Console.WriteLine(largeValue);
 
         }
 
