@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -52,7 +53,8 @@ namespace Models
 
         public override string ToString()
         {
-            return $"{Name}; {Category}; {Price}zł; {ExpirationDate.ToShortDateString()}";
+            //return $"{Name}; {Category}; {Price}zł; {ExpirationDate.ToShortDateString()}";
+            return JsonConvert.SerializeObject(this);
         }
     }
 }

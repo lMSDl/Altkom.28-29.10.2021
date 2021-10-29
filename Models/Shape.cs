@@ -17,7 +17,7 @@ namespace Models
 
         public override string ToString()
         {
-            return Name;
+            return Figgle.FiggleFonts.Standard.Render(Name);
         }
 
         public void SomeMethod()
