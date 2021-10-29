@@ -10,6 +10,8 @@ namespace ShopApp
 
         static void Main(string[] args)
         {
+            new Test().Execute();
+
             var program = new Program();
             program.Products = new List<Product>();
             program.AddInitialProducts();
