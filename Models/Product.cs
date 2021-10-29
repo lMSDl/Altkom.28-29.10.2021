@@ -23,6 +23,8 @@ namespace Models
         //auto-property
         public string Name { get; set; }
 
+        public Category Category { get; set; }
+
         //full-property
         public decimal Price
         {
@@ -38,19 +40,19 @@ namespace Models
 
         public Product()
         {
-
         }
         public Product(DateTime expirationDate)
         {
             ExpirationDate = expirationDate;
         }
 
+
         //read-only property (bez settera)- wartość możemy ustawić tylko w konstruktorze
         public DateTime ExpirationDate { get; }
 
         public override string ToString()
         {
-            return $"{Name}; {Price}zł; {ExpirationDate.ToShortDateString()}";
+            return $"{Name}; {Category}; {Price}zł; {ExpirationDate.ToShortDateString()}";
         }
     }
 }
