@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopApp", "ShopApp\ShopApp.csproj", "{EF6FA3D8-F8FC-47EC-A997-B0A6675873E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID", "SOLID\SOLID.csproj", "{E54CA4C2-D62F-4050-81C2-953C096D5165}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EF6FA3D8-F8FC-47EC-A997-B0A6675873E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF6FA3D8-F8FC-47EC-A997-B0A6675873E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF6FA3D8-F8FC-47EC-A997-B0A6675873E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54CA4C2-D62F-4050-81C2-953C096D5165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54CA4C2-D62F-4050-81C2-953C096D5165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54CA4C2-D62F-4050-81C2-953C096D5165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54CA4C2-D62F-4050-81C2-953C096D5165}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
