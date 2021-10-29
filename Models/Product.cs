@@ -48,7 +48,7 @@ namespace Models
 
 
         //read-only property (bez settera)- wartość możemy ustawić tylko w konstruktorze
-        public DateTime ExpirationDate { get; }
+        public DateTime ExpirationDate { get; set; }
 
         public override string ToString()
         {
